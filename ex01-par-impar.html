@@ -13,11 +13,12 @@
         ou ímpar e informe ao usuário usando alert().
         */
         // entrada de dados
-        let n = Number(prompt('Insira um número :'))
+        // parseInt(): *TENTA* converter uma string em um número INTEIRO (ignora os decimais)
+        let n = parseInt(prompt('Insira um número :'))
 
         // teste - isNaN e  par/ímpar - saída de dados 
         if(isNaN(n)) {
-            alert('O valor inserido não é um número.')
+            alert('ERRO: O valor inserido não é um número inteiro .')
         }
         else if (n % 2 === 0) {
             alert('O número inserido é par.')     
