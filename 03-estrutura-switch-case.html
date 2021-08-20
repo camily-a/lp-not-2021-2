@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+    <script>
+        /*
+            Solicite ao usuário para informar dois números e um operador
+            matemático. Você usará três prompt(), um para cada número e
+            o terceiro para o operador.
+            Aceite os seguintes operadores:
+            + => adição
+            - => subtração
+            *, X ou x => multiplicação
+            / ou : => divisão
+            Efetue o cálculo apropriado de acordo com o operador informado
+            e informe o resultado usando document.write().
+        */
+
+        // Number e parseFloat tentam converter uma string em números com casas decimais , Number é novo
+        let n1 = Number(prompt("Insira o primeiro valor :"))
+        let n2 = parseFloat(prompt("Insira o segundo valor : "))
+        let op = prompt("Digite o operador desejado ( + - * X  x  / : ) : ")
+
+        if(isNaN(n1) || isNaN(n2)) {
+            document.write("ERRO : um dos valores inseridos não são números.")
+        } else {
+            switch(op) {
+                case '+':
+                    document.write(n1 + n2)
+                    break
+                case '-':
+                    document.write(n1 - n2)
+                    break
+                case '*':
+                    document.write(n1 * n2)
+                    break
+                case 'x':
+                    document.write(n1 * n2)
+                    break
+                case 'x':
+                    document.write(n1 * n2)
+                    break
+                case '/':
+                    document.write(n1 / n2)
+                    break
+                case ':':
+                    document.write(n1 / n2)
+                    break
+                default: // "else" do switch
+                    alert("ERRO : operador inválido")
+                   
+            }
+        }
+        
+        
+        /*
+        else if(op === "+") {
+            let res = n1 + n2
+            document.write("O resultado dessa soma é " + res)
+        } else if(op === "-") {
+            let res = n1 - n2
+            document.write("O resultado dessa subtração é " + res)
+        } else if(op === "*" || op === "X" || op === "x") {
+            let res = n1 * n2
+            document.write("O resultado dessa multiplicação é " + res)
+        } else if(op === "/" || op === ":") {
+            let res = n1 / n2
+            document.write("O resultado dessa divisão é " + res)
+        } else {
+            document.write("ERRO: o operador inserido não é válido .")
+        }
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
