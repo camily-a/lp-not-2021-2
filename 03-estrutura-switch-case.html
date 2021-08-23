@@ -23,39 +23,47 @@
         let n1 = Number(prompt("Insira o primeiro valor :"))
         let n2 = parseFloat(prompt("Insira o segundo valor : "))
         let op = prompt("Digite o operador desejado ( + - * X  x  / : ) : ")
+        let res
 
         if(isNaN(n1) || isNaN(n2)) {
             document.write("ERRO : um dos valores inseridos não são números.")
         } else {
             switch(op) {
                 case '+':
-                    document.write(n1 + n2)
+                    res = n1 + n2
                     break
                 case '-':
-                    document.write(n1 - n2)
+                    res = n1 - n2
                     break
                 case '*':
-                    document.write(n1 * n2)
+                    res = n1 * n2
                     break
                 case 'x':
-                    document.write(n1 * n2)
+                    res = n1 * n2
                     break
                 case 'x':
-                    document.write(n1 * n2)
+                    res = n1 * n2
                     break
                 case '/':
-                    document.write(n1 / n2)
+                    res = n1 / n2
                     break
                 case ':':
-                    document.write(n1 / n2)
+                    res = n1 / n2
                     break
                 default: // "else" do switch
                     alert("ERRO : operador inválido")
                    
             }
         }
+
+        // document.write(n1 + ' ' + op + ' ' + n2 + ' é igual a ' + res)
         
-        
+        // usando strings templates
+        // String templates são strings delimitadas por `` (acento agudo , crase)
+        // e que aceitam dentro delas , a interpolação de variaveis usando ${}
+        if(res !== undefined) {
+            document.write(`${n1} ${op} ${n2} é igual a ${res}`)
+        }
         /*
         else if(op === "+") {
             let res = n1 + n2
