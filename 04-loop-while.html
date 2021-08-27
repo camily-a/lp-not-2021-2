@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop While </title>
+    <script>
+        /*
+            1 - LOOP WHILE 
+
+            -- peça ao usuário que informe uma quantidade arbitrária de números 
+            (um de cada vez) e quando ele informa o valor 0 (zero), exiba
+            a soma dos números anteriormente informados.
+        */
+
+        let soma = 0 , n
+
+        while(n !== 0) {
+            n = Number(prompt('Informe um número para somar :'))
+
+            // só somamos se o usuário tuver informado um número válido 
+            if(! isNaN(n)) { // se o valor não for NaN
+                soma += n    // soma = soma + n
+            }
+        }
+
+        alert(`A soma dos numeros informados é ${soma}.`)
+
+        // CARACTERISTICAS DO LOOP WHILE :
+        // 1 - Quantidade de execuções : indeterminada.
+        // 2 - Garantia de execução : 0
+        // 3 - Local da avaliação da condição : no início.
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
