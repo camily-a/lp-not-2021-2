@@ -28,6 +28,7 @@
             rodovia = parseInt(prompt('Informe o comprimento da rodovia em km (> 200) :'))
         } while (isNaN(rodovia) || rodovia <= 200 )
 
+        /*
         let km = 1  
 
         while(km <= rodovia){
@@ -39,6 +40,16 @@
             }  
 
             km++  
+        }
+        */
+
+        for(let km = 1; km <= rodovia; km++ ) {
+            if(km % 23 === 0 ){
+                document.write(`No quilômetro ${km} existe um Posto de Atendimento ao Usuário.<br>`) 
+            }
+            if(km  % 31 === 0 ) {
+                document.write(`No quilômetro ${km} existe um Pedágio.<br>`)
+            }  
         }
 
 
