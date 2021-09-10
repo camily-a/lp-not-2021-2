@@ -26,7 +26,7 @@
 
     do {
         n2 = parseInt(prompt('Insira o segundo número inteiro: '))
-    } while( isNaN(n2) || n1 === n2 )
+    } while( isNaN(n2) || n2 === n1 )
 
     if(n1 < n2) {
         menor = n1
@@ -37,7 +37,10 @@
         maior = n1
     }
     
+    document.write('NÚMEROS SOMADOS: <br>')
+
     for(let i = menor ; i <= maior ; i++) {
+        document.write(i + '<br>')
         soma += i
     }
 
