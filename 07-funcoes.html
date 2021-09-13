@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+    <script>
+
+        // Princípio DRY = Don't repeat yourself.
+
+        // declaracao de FUNCAO
+        // num -> parÂmetro ou argumento (dado de entrada)
+        function Fatorial(n) {
+            let fat = 1
+
+            for(let i = n; i >= 1; i--) {
+            fat *= i
+            }
+
+            return fat      // dado de saída
+        }
+
+        // CHAMADA A FUNÇAO
+        // A variável fat4 receberá o resultado da função ,
+        //  enviado pelo return
+
+        let fat4 = Fatorial(4)
+
+        document.write(`4! é igual a ${fat4}. <br>`)
+
+        // CHAMADA A FUNÇÃO sem atribuição de variável
+        document.write(`6! é igual a ${Fatorial(6)}. <br>`)
+
+        // Chamada a uma função da biblioteca Math do JS
+        document.write(`A raiz quadrada de 9  é igual a ${Math.sqrt(9)}. <br>`)
+
+        let int
+
+        do {
+            int = parseInt(prompt('Informe um número inteiro maior que 1: '))
+        } while (isNaN(int) || int <= 1)
+
+        document.write(`${int}! é igual a ${Fatorial(int)}. <br>`)
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
