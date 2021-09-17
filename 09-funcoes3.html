@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções 3</title>
+    <script>
+        /* 
+            Funções sem Retorno
+            São funções que desempenham uma tarefa
+            mas não retornam um valor como resultado
+        */
+
+        function desenharTraco(tamanho) {
+            for(let i= 1; i < tamanho ; i++) {
+                document.write('-')
+            }
+            document.write('<br>')
+        }
+
+        // chamando a função 
+        // note que não há atribuição de variáveis uma 
+        // vez que a fução não retorna valor
+
+        let x = desenharTraco(50)
+        document.write(`o valor dessa função é ${x} <br>`)
+        desenharTraco(30)
+        desenharTraco(75)
+
+        // Função se parâmetro
+        /*
+            Uma função pode não precisar de informações externas para fazer 
+            o seu trabalho . Nesse caso , os parenteses que seguem o nome da função permanecem , 
+            tanto na declaração quanto na chamada da funçao.
+        */
+
+        function agora(){ // retorna a hora atual do computador
+            let hoje = new Date()
+            return hoje.getHours() + ':' + hoje.getMinutes() + ':' +
+            hoje.getSeconds()
+        }
+        document.write(`Hora atual: ${agora()} <br>`)
+
+        /* Função sem parametro e sem retorno */
+        function saudacao() {
+            let hoje = new Date()
+            let hora = hoje.getHours()
+
+            if(hora < 12) {
+                document.write("Bom dia! <br>")
+            }
+            else if(hora < 18) {
+                document.write('Boa tarde! <br>')
+            }
+            else {
+                document.write("Boa noite!<br>")
+            }
+        }
+
+        // chamada à funcao
+        saudacao()
+
+
+        /*  Funções com Parâmetros Opcionais
+    
+            Os últimos parâmetros de uma função podem se tornar
+            opcionais caso seja fornecido um valor qu eserá usado 
+            como padrão para caso de ele não ser passado no chamado.
+        */
+
+        // pode ter mais de um opcional porém eles vem sempre por último
+
+        function Area(base, altura, tipo = 'R') {
+            
+            let area
+
+            switch(tipo) {
+                case 'R':                // retângulo
+                    area = base * altura
+                break
+                case 'T':               // triângulo
+                    area = (base * altura)/ 2
+                break
+                case 'E':               // Elipse
+                    area = (base/2) * (altura/2) * Math.PI
+                break
+
+                default:          // Forma não reconhecida
+                    area = null
+            }
+
+            return area
+        }
+
+        document.write(`A área do retângulo de 10x12: ${Area(10,12)} <br>`)
+        document.write(`A área do triângulo de 7x25: ${Area(7,25, 'T')} <br>`)
+        document.write(`A área do retângulo de 4.5x4.5: ${Area(4.5,4.5)} <br>`)
+        document.write(`A área do retângulo de 19x12.5: ${Area(19,12.5)} <br>`)
+        document.write(`A área de uma elipse de 8x8: ${Area(8, 8, 'E')} <br>`)
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
