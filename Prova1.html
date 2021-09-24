@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1 - Camily Aleixo</title>
+    <script>
+
+        // entrada - dia de nascimento
+        do {
+            dia = parseInt(prompt('Informe o dia de seu nascimento (1 a 31) :'))
+        } while (isNaN(dia) || dia < 1 || dia > 31);
+
+        // entrada - mês de nascimento
+        do {
+            mes = parseInt(prompt('Informe o mês de seu nascimento (1 a 12) :'))
+        } while (isNaN(mes) || mes < 1 || mes > 12);
+
+        // entrada - ano de nascimento - entre 1921 e 2021 (inclusive ambos)
+        do {
+            ano = parseInt(prompt('Informe o ano de seu nascimento (1921 a 2021) :'))
+        } while (isNaN(ano) || ano < 1921 || ano > 2021);
+
+        // declaracao de funcao
+        function calculo(dia, mes, ano) {
+            let res
+            res = (ano + mes) * dia
+            res = res % 4 
+
+            return res
+        }
+
+        // chamada de funçao 
+        calculo(dia, mes, ano)
+
+        // switch case - separação de casas
+        let casa 
+        switch(calculo(dia, mes, ano)) {
+            case 0 : 
+                casa = 'Gado Demais'
+            break
+            case 1 : 
+                casa = 'Galo de Rinha'
+            break
+            case 2 : 
+                casa = 'Lacraste'
+            break
+            case 3 : 
+                casa = 'Smilingüido'
+            break
+        }
+
+        // saída - Casa do usuário
+        document.write(`Sua Casa é : ${casa} `)
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
