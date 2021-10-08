@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM</title>
+    
+</head>
+<body>
+    <h1>Calculadora DOM</h1>
+
+    <div>
+        <label for="num1">Primeiro número</label>
+        <input id="num1" type="number">
+    </div>
+
+    <div>
+        <label for="oper">Operação</label>
+        <select id="oper">
+            <option>(Selecione)</option>
+            <option>Soma (+)</option>
+            <option>Subtração (-)</option>
+            <option>Multiplicação (*)</option>
+            <option>Divisão (/)</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="num2">Segundo número</label>
+        <input id="num2" type="number">
+    </div>
+
+    <div>
+        <button id="calcular">Calcular</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        // capturando elementos HTML
+        const num1 = document.querySelector('#num1')
+        const num2 = document.querySelector('#num2')
+        const oper = document.getElementById('oper')
+        const resultado = document.getElementById('resultado')
+        const calcular = document.querySelector('#calcular')
+
+        // validando 
+        function validar() {
+
+            let n1 = parseFloat(num1.value)
+            let n2 = parseFloat(num2.value)
+
+            // n1
+            if(isNaN(n1)) {
+                alert('O primeiro número deve ser preenchido por um valor numérico.')
+                num1.focus
+                return false 
+            }
+
+            // operação
+            if(oper.selectedIndex <= 0) {
+                alert('Selecione a operação desejada.')
+                oper.focus()
+                return false
+            }
+
+            // n2
+            if(isNaN(n2)) {
+                alert('O segundo número deve ser preenchido por um valor numérico.')
+                num2.focus
+                return false 
+            }
+
+            return true
+        }
+        // realizando o calculo
+        let res 
+        function calculo()  {
+
+            let n1 = parseFloat(num1.value)
+            let n2 = parseFloat(num2.value)
+                
+            if(validar()) {
+                switch (oper.selectedIndex) {
+                    case 1:
+                        res = n1 + n2
+                        break
+                    case 2:
+                        res = n1 - n2
+                        break
+                    case 3:
+                        res = n1 * n2
+                        break
+                    default:
+                        res = n1 / n2
+                        break
+                }
+
+                // mostrar resulado 
+                resultado.textContent = `O Resultado da operação é ${res}`
+            
+            }
+        }
+
+        // listener - evento
+        calcular.addEventListener( 'click', calculo)
+
+
+    </script>
+    
+</body>
+</html>
