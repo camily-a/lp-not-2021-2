@@ -32,28 +32,35 @@
 
     <div>
         <button id="calcular">Calcular</button>
+        <button id="limpar">Limpar</button>
     </div>
 
     <div id="resultado"></div>
 
     <script>
+
         // capturando elementos HTML
         const num1 = document.querySelector('#num1')
         const num2 = document.querySelector('#num2')
         const oper = document.getElementById('oper')
         const resultado = document.getElementById('resultado')
         const calcular = document.querySelector('#calcular')
+        const limpar = document.querySelector('#limpar')
+
+        let n1, n2
 
         // validando 
         function validar() {
 
-            let n1 = parseFloat(num1.value)
-            let n2 = parseFloat(num2.value)
+            // usando as variáveis declaradas externamente à função
+            n1 = parseFloat(num1.value)
+            n2 = parseFloat(num2.value)
 
+            console.log({n1, n2}) // tem que usar parsefloat e não number
             // n1
             if(isNaN(n1)) {
                 alert('O primeiro número deve ser preenchido por um valor numérico.')
-                num1.focus
+                num1.focus()
                 return false 
             }
 
@@ -67,44 +74,65 @@
             // n2
             if(isNaN(n2)) {
                 alert('O segundo número deve ser preenchido por um valor numérico.')
-                num2.focus
+                num2.focus()
                 return false 
             }
 
             return true
         }
+
         // realizando o calculo
-        let res 
         function calculo()  {
 
-            let n1 = parseFloat(num1.value)
-            let n2 = parseFloat(num2.value)
-                
+            // let n1 = parseFloat(num1.value)
+            // let n2 = parseFloat(num2.value)
+            // utiliza os valores que já estão dentro das variaveis por conta da função validar
+
+            let res 
+
             if(validar()) {
+
+                // limpa qualquer valor que estiver sendo exibido na div de resultado
+                resultado.textContent = ''
+
                 switch (oper.selectedIndex) {
-                    case 1:
+                    case 1:    // adição
                         res = n1 + n2
                         break
-                    case 2:
+                    case 2:   // subtração
                         res = n1 - n2
                         break
-                    case 3:
+                    case 3:   // multiplicação
                         res = n1 * n2
                         break
-                    default:
+                    default:  // divisão (case 4)
                         res = n1 / n2
-                        break
                 }
 
-                // mostrar resulado 
-                resultado.textContent = `O Resultado da operação é ${res}`
-            
+                // mostrar resulado  (limitar resultado a 4 casas decimais)
+                // resultado.textContent = `O Resultado da operação é ${res.toFixed(4)}`
+                
+                // troca o ponto pela virgula
+                // resultado.textContent = `O Resultado da operação é ${res.toLocaleString('pt-br')}`
+
+                // innerHTML interpreta HTML , textContent e Innertext não , ambos são iguais
+                resultado.innerHTML = '<strong>' + res.toLocaleString('pt-br') + '<strong>'
+
+                // var só morre quando a função acabar e let sobrevive apenas dentro de seu bloco
             }
+        }
+
+        function limparValores() {
+            num1.value = ''
+            oper.selectedIndex = 0
+            num2.value = ''
+            resultado.textContent = ''
+            num1.focus()
         }
 
         // listener - evento
         calcular.addEventListener( 'click', calculo)
-
+        limpar.addEventListener('click', limparValores)
 
     </script>
     

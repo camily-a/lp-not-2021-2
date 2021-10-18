@@ -149,7 +149,7 @@
             // Forma de tratamento
             if(formaTrat.selectedIndex <= 0) {
                 alert('Selecione uma forma de tratamento.')
-                foarmaTrat.focus()
+                formaTrat.focus()
                 return false
             }
 
@@ -157,14 +157,14 @@
             let valHoraDia = parseInt(horaDia.value)
             if(isNaN(valHoraDia) || valHoraDia < 0 || valHoraDia > 23) {
                 alert('A hora do dia deve ser um valor entre 0 e 23.')
-                horaDia.focus
+                horaDia.focus()
                 return false 
             }
 
             // Opções de exibição
             if((! exibirAlert.checked) && (! exibirDocument.checked)) {
                 alert('Pelo menos uma das opções de exibição deve estar marcada.')
-                exibirAlert.focus
+                exibirAlert.focus()
                 return false
             }
 
