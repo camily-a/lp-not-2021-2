@@ -34,13 +34,16 @@
         3) Insira as novas estações no vetor nas posições apropriadas.
             Faça um loop for TRADICIONAL EM SENTIDO INVERSO para exibir
             as estações e depois passe um traço horizontal (<hr>).
-        Em 2130, a estação Centro foi desativada, e em seu lugar duas
+        
+            Em 2130, a estação Centro foi desativada, e em seu lugar duas
         novas estações entraram em funcionamento: as estações 9 de Julho
         e Champagnat.
+
         4) Modifique o vetor de acordo com as alterações.
         Faça um loop for TRADICIONAL para exibir as estações e depois
         passe um traço horizontal (<hr>).  
-        Em 2133, no entanto, Franca entrou em guerra com os 
+        
+            Em 2133, no entanto, Franca entrou em guerra com os 
         restinguenses, que invadiram e destruíram as duas estações 
         mais ao sul do metrô de Franca. Neste mesmo ano, em meio
         à crise, foi fechada a estação Santa Teresinha.
@@ -71,6 +74,36 @@
         }
 
         document.write('<hr>')
+
+        // 3)
+        estacoes.splice(2, 0, 'Vila Imperador')
+        estacoes.splice(6, 0, 'Jardim Alvorada')
+
+        
+        for(i=estacoes.length - 1 ; i>= 0 ; i--) {
+            document.write(estacoes[i] + '<br>')
+        }
+
+        document.write('<hr>')
+
+        // 4)
+        estacoes.splice(4, 1, '9 de Julho', 'Champagnat')
+
+        for(i=0 ; i< estacoes.length; i++) {
+            document.write(estacoes[i] + '<br>')
+        }
+
+        document.write('<hr>')
+
+        // 5)
+        estacoes.splice(8, 2)
+        estacoes.splice(estacoes.indexOf('Santa Teresinha'), 1)
+
+        for(let estacao of estacoes) {
+            document.write(estacao + '<br>')
+        }
+
+        document.write('<hr')
 
     </script>
 </head>
