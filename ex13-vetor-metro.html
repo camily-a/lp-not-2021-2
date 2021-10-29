@@ -57,7 +57,7 @@
         let estacoes = []
 
         estacoes.push('Santa Teresinha',
-        'Estação', 'Centro', 'Jardim Lima','Aeroporto I.')
+        'Estação', 'Centro', 'Jardim Lima','Aeroporto I')
 
         for(i=0 ; i< estacoes.length; i++) {
             document.write(estacoes[i] + '<br>')
@@ -76,27 +76,31 @@
         document.write('<hr>')
 
         // 3)
-        estacoes.splice(2, 0, 'Vila Imperador')
-        estacoes.splice(6, 0, 'Jardim Alvorada')
+        estacoes.splice(estacoes.indexOf('Estação'), 0, 'Vila Imperador')
+        estacoes.splice(estacoes.indexOf('Aeroporto I'), 0, 'Jardim Alvorada')
 
         
-        for(i=estacoes.length - 1 ; i>= 0 ; i--) {
+        for(let i = estacoes.length - 1 ; i>= 0 ; i--) {
             document.write(estacoes[i] + '<br>')
         }
 
         document.write('<hr>')
 
         // 4)
-        estacoes.splice(4, 1, '9 de Julho', 'Champagnat')
+        estacoes.splice(estacoes.indexOf('Centro'), 1, '9 de Julho', 'Champagnat')
 
-        for(i=0 ; i< estacoes.length; i++) {
+        for(let i=0 ; i< estacoes.length; i++) {
             document.write(estacoes[i] + '<br>')
         }
 
         document.write('<hr>')
 
         // 5)
-        estacoes.splice(8, 2)
+        // ** estacoes.splice(estacoes.indexOf('Aeroporto I'), 2)
+        // splice() aceita posições negativas. Nesse caso a contagem se dá a partir
+        // do último elemento , retroativamente.
+        estacoes.splice(-2, 2)
+
         estacoes.splice(estacoes.indexOf('Santa Teresinha'), 1)
 
         for(let estacao of estacoes) {
