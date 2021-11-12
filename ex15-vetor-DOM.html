@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+</head>
+<body>
+    <h1>Estados do Sudeste e do Sul do Brasil</h1>
+    <ul>
+
+    </ul>
+    <script>
+                
+        //  1) Crie um vetor vazio. 
+        //  2) Usando o método de inserção NO INÍCIO do vetor, coloque os seguintes Estados
+        //    no vetor:
+        //    São Paulo
+        //    Santa Catarina
+        //    Rio Grande do Sul
+        //    Rio de Janeiro
+        //    Paraná
+        //    Minas Gerais
+        //    Espírito Santo
+        //  3) Percorra o vetor com um loop for..of, crie um item de lista para cada um dos elementos do vetor e insira-o na lista não ordenada.
+        
+        let estados = []
+
+        estados.unshift('São Paulo','Santa Catarina', ' Rio Grande do Sul', 'Rio de Janeiro', 'Paraná', 'Minas Gerais','Espírito Santo' )
+
+        for(let estado of estados) {
+            document.write(estado + '<br>')
+        }
+
+        const lista = document.querySelector('ul')
+
+        const sp = document.createElement('li')
+        sp.textContent = estados[0]
+        lista.appendChild(sp)
+
+        const sc = document.createElement('li')
+        sc.textContent = estados[1]
+        lista.appendChild(sc)
+        
+        const rs = document.createElement('li')
+        rs.textContent = estados[2]
+        lista.appendChild(rs)
+
+        const rj = document.createElement('li')
+        rj.textContent = estados[3]
+        lista.appendChild(rj)
+
+        const pr = document.createElement('li')
+        pr.textContent = estados[4]
+        lista.appendChild(pr)
+
+        const mg = document.createElement('li')
+        mg.textContent = estados[5]
+        lista.appendChild(mg)
+
+        const es = document.createElement('li')
+        es.textContent = estados[6]
+        lista.appendChild(es)
+
+
+        
+        
+    </script>
+</body>
+</html>
