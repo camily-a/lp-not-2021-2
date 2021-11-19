@@ -26,44 +26,56 @@
         
         let estados = []
 
-        estados.unshift('São Paulo','Santa Catarina', ' Rio Grande do Sul', 'Rio de Janeiro', 'Paraná', 'Minas Gerais','Espírito Santo' )
+        // estados.unshift('São Paulo','Santa Catarina', ' Rio Grande do Sul', 'Rio de Janeiro', 'Paraná', 'Minas Gerais','Espírito Santo' )
 
-        for(let estado of estados) {
-            document.write(estado + '<br>')
-        }
+        estados.unshift('São Paulo')
+        estados.unshift('Santa Catarina')
+        estados.unshift('Rio Grande do Sul')
+        estados.unshift('Rio de Janeiro')
+        estados.unshift('Paraná')
+        estados.unshift('Minas Gerais')
+        estados.unshift('Espírito Santo')
+
+        // for(let estado of estados) {
+        //     document.write(estado + '<br>')
+        // }
 
         const lista = document.querySelector('ul')
 
-        const sp = document.createElement('li')
-        sp.textContent = estados[0]
-        lista.appendChild(sp)
+        // const sp = document.createElement('li')
+        // sp.textContent = estados[0]
+        // lista.appendChild(sp)
 
-        const sc = document.createElement('li')
-        sc.textContent = estados[1]
-        lista.appendChild(sc)
+        // const sc = document.createElement('li')
+        // sc.textContent = estados[1]
+        // lista.appendChild(sc)
         
-        const rs = document.createElement('li')
-        rs.textContent = estados[2]
-        lista.appendChild(rs)
+        // const rs = document.createElement('li')
+        // rs.textContent = estados[2]
+        // lista.appendChild(rs)
 
-        const rj = document.createElement('li')
-        rj.textContent = estados[3]
-        lista.appendChild(rj)
+        // const rj = document.createElement('li')
+        // rj.textContent = estados[3]
+        // lista.appendChild(rj)
 
-        const pr = document.createElement('li')
-        pr.textContent = estados[4]
-        lista.appendChild(pr)
+        // const pr = document.createElement('li')
+        // pr.textContent = estados[4]
+        // lista.appendChild(pr)
 
-        const mg = document.createElement('li')
-        mg.textContent = estados[5]
-        lista.appendChild(mg)
+        // const mg = document.createElement('li')
+        // mg.textContent = estados[5]
+        // lista.appendChild(mg)
 
-        const es = document.createElement('li')
-        es.textContent = estados[6]
-        lista.appendChild(es)
+        // const es = document.createElement('li')
+        // es.textContent = estados[6]
+        // lista.appendChild(es)
 
+        for(let estado of estados) {
+            const item = document.createElement('li')
+            item.textContent = estado
+            lista.appendChild(item)
+        }
 
-        
         
     </script>
 </body>
